@@ -46,16 +46,19 @@ export const Task = (props) => {
     // console.log(name, value);
     if (checked === "completed") {
       setChecked("notCompleted");
-      const tasks = await axios.post("http://localhost:9002/editTask", {
-        name: props.user,
-        task: {
-          title: props.row.title,
-          description: props.row.description,
-          status: "notCompleted",
-          dueDate: props.row.dueDate,
-        },
-        id: props.row._id,
-      });
+      const tasks = await axios.post(
+        "https://backend-level2.herokuapp.com/editTask",
+        {
+          name: props.user,
+          task: {
+            title: props.row.title,
+            description: props.row.description,
+            status: "notCompleted",
+            dueDate: props.row.dueDate,
+          },
+          id: props.row._id,
+        }
+      );
       if (tasks.status === 200) {
         //   console.log(tasks.data);
         const { message } = tasks.data;
