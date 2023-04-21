@@ -55,7 +55,6 @@ function App() {
             ) : (
               <Register onFormSwitch={toggleForm} />
             )}
-            <h6>Sample Username: liem, PW: liem</h6>
           </div>
         )}
       </div>
