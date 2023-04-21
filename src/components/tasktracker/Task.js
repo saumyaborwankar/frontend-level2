@@ -20,7 +20,7 @@ export const Task = (props) => {
     console.log(user, row);
     // console.log("dee");
     const tasks = await axios.post(
-      "https://backend-level2-g2s7.vercel.app/deleteTask",
+      "https://backend-level2.herokuapp.com/deleteTask",
       {
         name: user,
         // task: row,
@@ -68,7 +68,7 @@ export const Task = (props) => {
     } else {
       setChecked("completed");
       const tasks = await axios.post(
-        "https://backend-level2-g2s7.vercel.app/editTask",
+        "https://backend-level2.herokuapp.com/editTask",
         {
           name: props.user,
           task: {

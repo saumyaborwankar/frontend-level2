@@ -73,7 +73,7 @@ export const TaskList = (props) => {
     // console.log("task tracker started for", { user });
     const fetchData = async () => {
       const reponse = await axios.post(
-        "https://backend-level2-g2s7.vercel.app/getTasks",
+        "https://backend-level2.herokuapp.com/getTasks",
         {
           name: user,
         }
@@ -97,7 +97,7 @@ export const TaskList = (props) => {
     console.log(user, row);
     // console.log("dee");
     const tasks = await axios.post(
-      "https://backend-level2-g2s7.vercel.app/deleteTask",
+      "https://backend-level2.herokuapp.com/deleteTask",
       {
         name: user,
         // task: row,
