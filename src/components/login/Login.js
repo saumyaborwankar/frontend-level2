@@ -16,10 +16,13 @@ export const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const loginUser = async () => {
-    let response = await axios.post("https://backend-level2.vercel.app/login", {
-      name: username,
-      password: password,
-    });
+    let response = await axios.post(
+      "https://backend-level2-g2s7.vercel.app/login",
+      {
+        name: username,
+        password: password,
+      }
+    );
     if (response.status === 200) {
       props.setIsLoggedIn(true);
       props.setUser(username);
