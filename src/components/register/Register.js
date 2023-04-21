@@ -17,8 +17,14 @@ export const Register = (props) => {
           password: password,
         })
         .then((res) => {
-          alert(res.data.message);
-          props.onFormSwitch("login");
+          if (res.status === 200) {
+            alert(res.data.message);
+            props.onFormSwitch("login");
+          } else if (res.status === 250) {
+            alert("user already registered");
+          } else {
+            alert("server error. Try again");
+          }
         });
     } else {
       alert("invlid input");
